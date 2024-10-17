@@ -1,0 +1,207 @@
+:root {
+  --primary-color: #F54864; 
+  --secondary-color: #242A38;
+  --dark-gray: #4E596F;
+  --white: #FFFFFF;
+}
+
+body {
+  margin: 0; 
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x:hidden;
+}
+
+
+.navbar {
+  background-color: transparent; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0; /* Mayor padding-top cuando es transparente */
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; 
+  box-sizing: border-box;
+  z-index: 1000; 
+  transition: padding-top 0.3s ease, background-color 0.3s ease; /* Transición suave */
+}
+
+.navbar.scrolled {
+  background-color: var(--dark-gray); 
+  padding-top: 10px; /* Reducir padding-top al hacer scroll */
+}
+
+.nav_items {
+  display: flex;
+  transition: 0.3s ease all;
+}
+
+.nav_logo {
+  font-weight: bold;
+  font-size: 25px;
+  margin: 15px;
+  margin-right: 0;
+  color: var(--white);
+  transition: color 0.3s ease; /* Transición suave para el color del logo */
+}
+
+.nav_logo span {
+  font-weight: lighter;
+  font-size: 20px;
+  margin: 15px;
+  margin-left: 0;
+  color: var(--white);
+  transition: color 0.3s ease; /* Transición suave para el color del logo */
+}
+
+.nav_items a {
+  margin: 15px;
+  color: var(--white);
+  position: relative;
+  text-decoration: none;
+  transition: padding 0.3s ease, color 0.3s ease; /* Transición suave para el padding y color */
+}
+
+.nav_items a:hover {
+  margin: 15px;
+  color: var(--secondary-color);
+  position: relative;
+  text-decoration: none;
+  transition: padding 0.3s ease, color 0.3s ease; /* Transición suave para el padding y color */
+}
+
+.nav_items a.scrolled {
+  margin-top: 5px; /* Reducir margen superior cuando se hace scroll */
+}
+
+.nav_items a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--dark-gray);
+  transition: all 0.5s;
+}
+
+.nav_items a:hover::before {
+  width: 100% !important;
+}
+
+.nav_toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px; /* No afecta padding en mobile */
+  }
+  
+  .nav_items {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: var(--dark-gray);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh; 
+    transform: translateX(-100%);
+    transition: 0.3s ease all;
+    z-index: 999;
+  }
+
+  .nav_items.open {
+    transform: translateX(0); 
+  }
+
+  .nav_items a {
+    text-align: center;
+  }
+
+  .nav_toggle {
+    display: flex !important;
+    flex-direction: column;                
+    margin: 15px;
+    cursor: pointer;
+  }
+
+  .nav_toggle span {
+    width: 30px;
+    height: 4px;
+    background: var(--white);
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transform-origin: 5px 0px;
+    transition: all 0.2s linear;
+  }
+
+  .nav_toggle.close span {
+    transform: rotate(45deg) translate(0px, 0px);
+  }
+
+  .nav_toggle.close span:nth-child(2) {
+    display: none;
+  }
+
+  .nav_toggle.close span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px, 1px);
+  }
+}
+
+.footer{
+  background:var(--secondary-color);
+  padding:30px 0px;
+  font-family: 'Play', sans-serif;
+  text-align:center;
+  }
+  
+  .footer .row{
+  width:100%;
+  margin:1% 0%;
+  padding:0.6% 0%;
+  color:gray;
+  font-size:0.8em;
+  }
+  
+  .footer .row a{
+  text-decoration:none;
+  color:gray;
+  transition:0.5s;
+  }
+  
+  .footer .row a:hover{
+  color:#fff;
+  }
+  
+  .footer .row ul{
+  width:100%;
+  }
+  
+  .footer .row ul li{
+  display:inline-block;
+  margin:0px 30px;
+  }
+  
+  .footer .row a i{
+  font-size:2em;
+  margin:0% 1%;
+  }
+  
+  @media (max-width:720px){
+  .footer{
+  text-align:left;
+  padding:5%;
+  }
+  .footer .row ul li{
+  display:block;
+  margin:10px 0px;
+  text-align:left;
+  }
+  .footer .row a i{
+  margin:0% 3%;
+  }
+  }

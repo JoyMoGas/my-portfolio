@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="/static/styles/base-styles.css">
+  {% endblock %}
+</head>
+<body>
+  {% block navbar %}
+  <nav class="navbar">
+    <div class="nav_logo">MoGas<span>DEV</span></div>
+    <div class="nav_items" id="_items">
+        <a href="/">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#services">SERVICES</a>
+        <a href="#portfolio">PORTFOLIO</a>
+    </div>
+    <div class="nav_toggle" id="_toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </nav>
+  {% endblock %}
+
+  {% block body %}
+  {% endblock %}
+  <script src="{{ url_for('static', filename='build/scripts.js') }}"></script>
+
+  {% block footer%}
+  <!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<footer>
+<div class="footer">
+<div class="row">
+<a href="https://www.instagram.com/mogas.dev/"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://x.com/DevMogas"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="https://www.linkedin.com/in/josé-montaño-gastélum-527426270/"><i class="fa-brands fa-linkedin"></i></a>
+<a href="https://github.com/JoyMoGas"><i class="fa-brands fa-github"></i></a>
+</div>
+
+<div class="row">
+<ul>
+<li><i class="fa-solid fa-location-dot"></i><span style="padding-left: 10px;">Hermosillo, Sonora, Mx</span></li>
+<li><i class="fa-solid fa-phone"></i>
+  <span  style="padding-left: 10px;">+52 66-21-14-68-94</span></li>
+<li><i class="fa-solid fa-envelope"></i>
+  <span  style="padding-left: 10px;">
+    <a href="mailto:mogasjose.5@gmail.com" target="_blank"
+      >mogasjose.5@gmail.com</a
+    ></li>
+</ul>
+</div>
+
+<div class="row">
+MOGASDEV Copyright © 2024 MOGASDEV - All rights reserved || Developed  By: MoGasDev 
+</div>
+</div>
+</footer>
+{% endblock %}
+</body>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    const navItems = document.querySelectorAll('.nav_items a');
+
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+      navItems.forEach(item => item.classList.add('scrolled'));
+    } else {
+      navbar.classList.remove('scrolled');
+      navItems.forEach(item => item.classList.remove('scrolled'));
+    }
+  });
+
+  window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+  });
+</script>
+</html>

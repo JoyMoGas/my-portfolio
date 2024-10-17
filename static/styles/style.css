@@ -1,0 +1,579 @@
+:root {
+  --primary-color: #F54864; /* #F78361 */
+  --secondary-color: #242A38;
+  --dark-gray: #4E596F;
+  --white: #FFFFFF;
+}
+
+
+body {
+  background-color: var(--dark-gray);
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+#demo-box {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), 
+  url("/static/images/image1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: filter 0.5s ease; 
+}
+
+.name {
+  font-size: 2.5em;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color);
+  z-index: 1;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--white);
+  text-align: center;
+}
+
+.contenedor-imagen {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.contenedor-imagen > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenedor-flecha {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 0px 6px  0px rgba(0, 0, 0, 0.5);
+  display: flex; /* Añadir flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.contenedor-flecha > i {
+  font-size: 20px; /* Ajustar el tamaño del icono */
+  color: var(--primary-color); /* Cambiar el color del icono */
+}
+
+.about {
+  background-color: var(--secondary-color);
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.about-content {
+  flex: 1;
+  padding: 20px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-content h2{
+  color: var(--white);
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.about-content p {
+  color: var(--white);
+}
+
+.about-content #line {
+  display: block;
+  width: 30%; /* O el ancho que prefieras */
+  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  margin-bottom: 20px; /* Espacio debajo de la línea */
+}
+
+.contenedor-imagen-about {
+  flex: 0 0 50%;
+  height: calc(100% - 40px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-imagen-about img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+#button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: var(--dark-gray);
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+#button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: var(--primary-color);
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+#button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+#button #button-span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 10px 15px; /* Reducido */
+  color: #fff;
+  font-size: 0.875em; /* Reducido */
+  font-weight: 700;
+  letter-spacing: 0.1em; /* Reducido */
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+#button:hover #button-span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+
+
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
+.skills-content {
+  flex: 1;
+  padding: 20px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills-content h2, .skills-content p {
+  color: var(--white);
+}
+
+.skills-content h2{
+  padding-top: 2em;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.skills-content span {
+  display: block;
+  width: 30%; /* O el ancho que prefieras */
+  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  margin-bottom: 20px; /* Espacio debajo de la línea */
+}
+
+.skills-content h3{
+  color: var(--white);
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.skills-content ul {
+  margin-left: -2em;
+  list-style: none;
+  color: var(--white);
+}
+
+.skills-content li {
+  padding-bottom: 0.5em;
+}
+
+/* Adaptación para pantallas más grandes */
+@media (min-width: 768px) {
+  .skills-content {
+    flex-direction: column; /* Mantiene el título en la parte superior */
+  }
+
+  .skills-grid {
+    display: flex; /* Cambia a fila */
+    justify-content: space-between; /* Espacio entre las secciones */
+    margin-top: 20px; /* Espacio superior para las habilidades */
+  }
+
+  .skills-content > div {
+    flex: 1; /* Cada sección ocupa el mismo espacio */
+    margin: 0 10px; /* Espacio horizontal entre secciones */
+  }
+
+  .skills-content > div h3 {
+    font-size: 1.8rem; /* Aumenta ligeramente el tamaño del texto en pantallas grandes */
+  }
+
+  .skills-content > div li {
+    font-size: 1.1rem; /* Aumenta el tamaño del texto de las listas */
+  }
+}
+
+
+.services {
+  background-color: var(--secondary-color);
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.services-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.services-content h2{
+  color: var(--white);
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.services-content p {
+  color: var(--white);
+}
+
+.services-content span {
+  display: block;
+  width: 30%; /* O el ancho que prefieras */
+  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  margin-bottom: 20px; /* Espacio debajo de la línea */
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column; /* Mobile first: apila los recuadros verticalmente */
+  gap: 1rem;
+}
+
+.services h3 {
+  color: var(--white);
+}
+
+.services p {
+  font-size: .8em;
+}
+
+.service-box {
+  border: 1px solid #F54864; /* Contorno de los recuadros */
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #4E596F; /* Cambia según el recuadro */
+}
+
+
+.video-section {
+  display: flex; /* Utiliza flexbox para disposición */
+  flex-direction: column; /* Coloca el contenido en columnas */
+  align-items: center; /* Centra horizontalmente el contenido general */
+  padding: 20px; /* Espacio interno */
+  background-color: var(--light-gray); /* Color de fondo opcional */
+}
+
+.video-content {
+  text-align: center; /* Asegúrate de que el texto del contenedor esté centrado */
+  width: 100%; /* Abarca todo el ancho disponible */
+  max-width: 800px; /* Máximo ancho del contenido */
+}
+
+.video-content h3 {
+  padding-top: 2.5em;
+  padding-bottom: 0;
+  color: var(--white);
+  font-size: 2rem;
+  text-align: left; /* Alinea el texto a la izquierda */
+  width: 100%; /* Asegura que el ancho sea completo para alineación */
+}
+
+.video-content #line {
+  display: block;
+  width: 30%; /* O el ancho que prefieras */
+  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  margin-bottom: 20px; /* Espacio debajo de la línea */
+}
+
+.video-box {
+  background-color: var(--dark-gray); /* Color de fondo para simular el video */
+  border: 1px solid hsla(0deg, 0%, 40%, 0.25); /* Contorno del cuadro */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 20px; /* Espacio interno */
+  margin-top: 20px; /* Espacio superior */
+  width: 88%; /* Ancho del cuadro */
+  
+  height: 340px; /* Altura del cuadro para simular un video */
+  display: flex; /* Utiliza flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.video-placeholder {
+  color: var(--white);
+  display: flex; /* Utiliza flexbox para centrar el icono y el texto */
+  flex-direction: column; /* Coloca el icono y texto uno encima del otro */
+  align-items: center; /* Centra horizontalmente el contenido */
+}
+
+.video-placeholder i {
+  size: 5em;
+  color: var(--white);
+}
+
+/* Adaptación para pantallas más grandes */
+@media (min-width: 768px) {
+  .services h3 {
+    font-size: 2em;
+    color: var(--white);
+  }
+  
+  .services p {
+    font-size: 1.5em;
+  }
+
+  .video-box {
+    width: 800px; /* Ancho del cuadro */
+    max-width: 600px; /* Ancho máximo para pantallas grandes */
+    height: 400px;
+  }
+  
+  .video-placeholder {
+    color: var(--white);
+    display: flex; /* Utiliza flexbox para centrar el icono y el texto */
+    flex-direction: column; /* Coloca el icono y texto uno encima del otro */
+    align-items: center; /* Centra horizontalmente el contenido */
+  }
+
+  .services-grid {
+    flex-direction: row; /* Coloca los recuadros en fila */
+    justify-content: space-between;
+  }
+
+  .service-box {
+    flex: 1; /* Asegura que los recuadros ocupen espacio proporcionalmente */
+    margin: 0 10px; /* Espacio entre recuadros */
+  }
+}
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .about {
+      flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+      height: auto; /* Permite que la sección se ajuste automáticamente */
+  }
+
+  .contenedor-imagen-about {
+      flex: 1; /* La imagen ocupa todo el ancho en dispositivos móviles */
+      height: auto; /* Permite que la altura se ajuste automáticamente */
+  }
+
+  .about-content {
+      padding: 10px; /* Reduce el padding en dispositivos móviles */
+  }
+}
+
+.social-media {
+  padding: 20px;
+  text-align: center; /* Centra el contenido */
+  background-color: var(--secondary-color); /* Color de fondo opcional */
+}
+
+.social-media h2 {
+  font-size: 2em;
+  text-align: left; /* Alinea el texto a la izquierda */
+  color: var(--white);
+  margin-bottom: 15px;
+}
+
+.social-media #line {
+  display: block;
+  width: 30%; /* O el ancho que prefieras */
+  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  margin-bottom: 20px; /* Espacio debajo de la línea */
+}
+
+.social-icons {
+  padding-bottom: 5em;
+  display: flex; /* Disposición en fila */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 20px; /* Espacio entre íconos */
+}
+
+.social-icon {
+  display: flex;
+  flex-direction: column; /* Coloca texto y icono en columna */
+  align-items: center; /* Centra el texto y el icono */
+  color: var(--white); /* Color de los íconos y texto */
+}
+
+.social-icon span {
+  margin-bottom: 10px; /* Espacio entre el texto y el icono */
+  font-size: 1rem; /* Tamaño del texto */
+}
+
+.social-icon a {
+  color: inherit; /* Hereda el color del padre */
+  font-size: 2rem; /* Tamaño del ícono */
+  transition: transform 0.3s; /* Efecto de transición */
+}
+
+.social-icon a:hover {
+  transform: scale(1.1); /* Efecto de aumento al pasar el cursor */
+}
+
+
+
+
+.portfolio {
+  padding: 20px;
+  background-color: var(--dark-gray); /* Color de fondo opcional */
+}
+
+.portfolio-content h2 {
+  color: var(--white);
+  margin-bottom: 15px;
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.portfolio-content span {
+  display: block;
+  width: 30%; /* O el ancho que prefieras */
+  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  margin-bottom: 20px; /* Espacio debajo de la línea */
+}
+
+.portfolio-grid {
+  display: grid; /* Usar grid para el diseño */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Tres columnas con un tamaño mínimo */
+  gap: 20px; /* Espacio entre tarjetas */
+}
+
+.portfolio-card {
+  background-color: var(--secondary-color); /* Color de fondo de la tarjeta */
+  padding: 0; /* Sin espacio interno para maximizar la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  color: var(--white); /* Color del texto */
+  overflow: hidden; /* Oculta el desbordamiento de la imagen */
+}
+
+.portfolio-image {
+  width: 100%; /* Ancho completo para la imagen */
+  height: 200px; /* Altura estándar para las imágenes */
+  object-fit: cover; /* Cubre el área manteniendo la proporción */
+  border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+.portfolio-card h3 {
+  margin: 10px; /* Espacio alrededor del título */
+  font-size: 1.5em;
+}
+
+.portfolio-card p {
+  margin: 10px; /* Espacio alrededor de la descripción */
+}
+
+/* Aumentar el tamaño de las tarjetas en pantallas grandes */
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en pantallas grandes */
+  }
+
+  .portfolio-card {
+    min-height: 400px; /* Altura mínima para las tarjetas en pantallas grandes */
+  }
+
+  .portfolio-image {
+    height: 250px; /* Altura mayor para las imágenes en pantallas grandes */
+  }
+}
+
+
+
+/* Media queries para pantallas más grandes */
+@media (min-width: 768px) {
+  .name {
+    font-size: 4em;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .name {
+    font-size: 5em;
+  }
+
+  .subtitle {
+    font-size: 25px;
+  }
+
+  .contenedor-imagen {
+    width: 160px;
+    height: 160px;
+  }
+}
