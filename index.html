@@ -57,6 +57,7 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+            window.open(fileUrl, '_blank');
         }
     </script>
 </head>
@@ -98,7 +99,7 @@
             <span id="line"></span>
             <p>I am a student of Information Systems Engineering at the University of Sonora. At 19 years old, I have focused on web development, where I have worked with technologies such as Python, TypeScript, HTML and CSS, in addition to managing databases with MySQL and Oracle Database. I am passionate about creating intuitive and functional web experiences, but I am also exploring application development to expand my skills and grow professionally. I am always looking for new challenges to continue learning and improve my abilities as a programmer.</p>
             <p>I am a proactive and curious person, always willing to adapt to new technologies and tools. I am interested in collaborating on projects that allow me to apply my knowledge and learn from professionals in the development field.</p>
-            <button id="download-button" onclick="downloadFile()">
+            <button id="button" onclick="downloadFile()">
                 Download CV
             </button>
             
