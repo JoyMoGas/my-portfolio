@@ -5,16 +5,37 @@
   --white: #FFFFFF;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* El body ocupará al menos el 100% de la altura de la ventana */
+  display: flex;
+  flex-direction: column; /* Estructura vertical */
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--dark-gray);
-  color: var(--primary-color);
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Esto debería evitar el scroll horizontal */
 }
 
+#demo-box {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), 
+  url("/static/images/image1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: filter 0.5s ease; 
+}
 
 .about, .services, .skills-content {
   display: flex;
@@ -81,6 +102,9 @@ body {
   color: var(--primary-color); /* Cambiar el color del icono */
 }
 
+
+
+
 .about {
   background-color: var(--secondary-color);
   display: flex;
@@ -131,7 +155,7 @@ body {
   object-fit: cover;
 }
 
-#button {
+button {
   position: relative;
   display: flex;
   justify-content: center;
@@ -143,37 +167,41 @@ body {
   overflow: hidden;
   cursor: pointer;
   border: none;
-  padding: 10px 15px; /* Ajustado para el tamaño */
-  color: #fff;
-  font-size: 0.875em; /* Ajustado para el tamaño */
-  font-weight: 700;
-  letter-spacing: 0.1em; /* Ajustado para el tamaño */
-  z-index: 20;
-  transition: all 0.3s ease-in-out;
 }
 
-#button:after {
+button:after {
   content: " ";
   width: 0%;
   height: 100%;
   background: var(--primary-color);
-  color: #183153;
   position: absolute;
   transition: all 0.4s ease-in-out;
   right: 0;
 }
 
-#button:hover::after {
+button:hover::after {
   right: auto;
   left: 0;
   width: 100%;
 }
 
-#button:hover {
+button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover span {
   color: #183153;
   animation: scaleUp 0.3s ease-in-out;
 }
-
 
 @keyframes scaleUp {
   0% {
@@ -192,7 +220,20 @@ body {
 
 
 
-
+.skills {
+  aspect-ratio: 16/9;
+  border: 1px solid hsla(0deg, 0%, 40%, 0.25);
+  padding: 1rem;
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+  url("/static/images/image2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  box-sizing: border-box;
+}
 
 .skills-content {
   flex: 1;
@@ -238,6 +279,9 @@ body {
 
 /* Adaptación para pantallas más grandes */
 @media (min-width: 768px) {
+  .skills-content span {
+    width: 8%;
+  }
   .skills-content {
     flex-direction: column; /* Mantiene el título en la parte superior */
   }
@@ -318,6 +362,21 @@ body {
   background-color: #4E596F; /* Cambia según el recuadro */
 }
 
+.video-section {
+  aspect-ratio: 16/9;
+  border: 1px solid hsla(0deg, 0%, 40%, 0.25);
+  padding: 1rem;
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+  url("/static/images/image3.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
 
 .video-section {
   display: flex; /* Utiliza flexbox para disposición */
@@ -377,6 +436,19 @@ body {
 
 /* Adaptación para pantallas más grandes */
 @media (min-width: 768px) {
+  .about-content #line {
+    width: 18%;
+  }
+  
+  .services-content span {
+    width: 8%;
+  }
+
+  .video-content #line {
+    width: 13%;
+  }
+
+
   .services h3 {
     font-size: 2em;
     color: var(--white);
@@ -478,12 +550,23 @@ body {
 
 
 
-.portfolio {
-  padding: 20px;
-  background-color: var(--dark-gray); /* Color de fondo opcional */
+.portfolio-content {
+  aspect-ratio: 16/9;
+  border: 1px solid hsla(0deg, 0%, 40%, 0.25);
+  padding: 1rem;
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  url("/static/images/image1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .portfolio-content h2 {
+  margin-top: 2em;
+  font-size: 2em;
   color: var(--white);
   margin-bottom: 15px;
   text-align: left; /* Alinea el texto a la izquierda */
@@ -504,6 +587,7 @@ body {
 
 .portfolio-card {
   background-color: var(--secondary-color); /* Color de fondo de la tarjeta */
+  margin-top: 3em;
   padding: 0; /* Sin espacio interno para maximizar la imagen */
   border-radius: 10px; /* Bordes redondeados */
   color: var(--white); /* Color del texto */
@@ -545,6 +629,14 @@ body {
 
 /* Media queries para pantallas más grandes */
 @media (min-width: 768px) {
+  .social-media #line {
+    width: 9%;
+  }
+
+  .portfolio-content span {
+    width: 9%;
+  }
+
   .name {
     font-size: 4em;
   }
@@ -598,6 +690,7 @@ body {
 .navbar.scrolled {
   background-color: var(--dark-gray); 
   padding-top: 10px; /* Reducir padding-top al hacer scroll */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al hacer scroll */
 }
 
 .nav_items {
@@ -772,3 +865,9 @@ body {
   margin:0% 3%;
   }
   }
+
+  
+
+
+
+
