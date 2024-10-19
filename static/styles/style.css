@@ -740,6 +740,24 @@ button:hover span {
   display: none;
 }
 
+.language-toggle {
+  position: relative; /* Para posicionar la lista desplegable */
+  margin: 0 15px; /* Espaciado a los lados */
+}
+
+#language-toggle {
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  color: var(--white); /* Color del texto del botón */
+  font-size: 18px; /* Tamaño del texto */
+  cursor: pointer; /* Cambiar el cursor a puntero */
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+
+
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 20px; /* No afecta padding en mobile */
