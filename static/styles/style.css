@@ -13,9 +13,15 @@ body, html {
   flex-direction: column; /* Estructura vertical */
 }
 
+/* El contenido principal debe crecer para ocupar el espacio disponible */
+main {
+  flex-grow: 1; /* Este asegura que el contenido principal crezca */
+}
+
 html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -27,7 +33,6 @@ body {
 }
 
 
-
 .about, .services, .skills-content {
   display: flex;
   width: 100%;
@@ -35,6 +40,16 @@ body {
   padding: 20px;
   box-sizing: border-box; /* Incluye padding en el ancho total */
 }
+
+.start-content {
+  flex: 1;
+  padding: 20px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .name {
   font-size: 2.5em;
   position: absolute;
@@ -42,7 +57,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--primary-color);
-  z-index: 1;
   text-align: center;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
@@ -63,7 +77,6 @@ body {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
-  z-index: 999;
 }
 
 .contenedor-imagen > img {
@@ -103,6 +116,7 @@ body {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  z-index: 999;
 }
 
 .about-content {
@@ -563,6 +577,11 @@ button:hover span {
   margin: 10px; /* Espacio alrededor de la descripción */
 }
 
+.skills, .video-section, .portfolio-content {
+  min-height: 100vh;
+}
+
+
 /* Aumentar el tamaño de las tarjetas en pantallas grandes */
 @media (min-width: 768px) {
   .portfolio-grid {
@@ -779,7 +798,6 @@ button:hover span {
   color:gray;
   font-size:0.8em;
   }
-  
   .footer .row a{
   text-decoration:none;
   color:gray;
