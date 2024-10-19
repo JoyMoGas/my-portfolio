@@ -528,7 +528,10 @@ button:hover span {
 
 
 
-
+.portfolio-content {
+  background-color: var(--dark-gray);
+  padding: 20px;
+}
 
 
 .portfolio-content h2 {
@@ -578,7 +581,7 @@ button:hover span {
 }
 
 .skills, .video-section, .portfolio-content {
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 
@@ -784,58 +787,68 @@ button:hover span {
   }
 }
 
-.footer{
-  background:var(--secondary-color);
-  padding:30px 0px;
+.footer {
+  background: var(--secondary-color);
+  padding: 20px 0; /* Ajuste del padding para móviles */
   font-family: 'Play', sans-serif;
-  text-align:center;
+  text-align: center;
+  position: relative; /* Cambiado para facilitar la fijación */
+  bottom: 0; /* Fijar al fondo */
+  width: 100%; /* Asegurar que ocupa el ancho completo */
+}
+
+.footer .row {
+  width: 100%;
+  margin: 1% 0;
+  padding: 0.6% 0;
+  color: gray;
+  font-size: 0.8em;
+}
+
+.footer .row a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+.footer .row a:hover {
+  color: #fff;
+}
+
+.footer .row ul {
+  width: 100%;
+}
+
+.footer .row ul li {
+  display: inline-block; /* Se puede cambiar a block en móviles si se desea */
+  margin: 0 30px;
+}
+
+.footer .row a i {
+  font-size: 2em;
+  margin: 0 1%;
+}
+.footer {
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    text-align: left;
+    padding: 15px 5%; /* Ajuste del padding para móviles */
   }
-  
-  .footer .row{
-  width:100%;
-  margin:1% 0%;
-  padding:0.6% 0%;
-  color:gray;
-  font-size:0.8em;
+
+  .footer .row ul li {
+    display: block; /* Muestra en bloque para móviles */
+    margin: 10px 0;
+    text-align: left;
   }
-  .footer .row a{
-  text-decoration:none;
-  color:gray;
-  transition:0.5s;
+
+  .footer .row a i {
+    margin: 0 3%;
   }
-  
-  .footer .row a:hover{
-  color:#fff;
-  }
-  
-  .footer .row ul{
-  width:100%;
-  }
-  
-  .footer .row ul li{
-  display:inline-block;
-  margin:0px 30px;
-  }
-  
-  .footer .row a i{
-  font-size:2em;
-  margin:0% 1%;
-  }
-  
-  @media (max-width:768px){
-  .footer{
-  text-align:left;
-  padding:5%;
-  }
-  .footer .row ul li{
-  display:block;
-  margin:10px 0px;
-  text-align:left;
-  }
-  .footer .row a i{
-  margin:0% 3%;
-  }
-  }
+}
+
 
   
 
