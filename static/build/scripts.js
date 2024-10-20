@@ -41,3 +41,21 @@ linksWithHashes.forEach(link => {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+    const options = {
+        threshold: 0.1, // Define cuánta parte de la sección debe estar visible antes de activarla
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Deja de observar la sección una vez que es visible
+            }
+        });
+    }, options);
+    sections.forEach((section) => {
+        section.classList.add("fade-in"); // Agrega la clase de fade-in a cada sección
+        observer.observe(section); // Observa cada sección
+    });
+});
