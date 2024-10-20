@@ -18,6 +18,8 @@ main {
   flex-grow: 1; /* Este asegura que el contenido principal crezca */
 }
 
+
+
 html {
   overflow-x: hidden;
   overflow-y: auto;
@@ -230,6 +232,7 @@ button:hover span {
 .skills-content {
   flex: 1;
   padding: 20px;
+  padding-top: 2px;
   text-align: justify;
   display: flex;
   flex-direction: column;
@@ -241,8 +244,8 @@ button:hover span {
 }
 
 .skills-content h2{
-  padding-top: 2em;
-  margin-bottom: 10px;
+  padding-top: 0.5em;
+  margin-bottom: 2px;
   font-size: 2rem;
 }
 
@@ -250,23 +253,74 @@ button:hover span {
   display: block;
   width: 30%; /* O el ancho que prefieras */
   border-top: 2px solid #F54864; /* Línea similar a <hr> */
-  margin-bottom: 20px; /* Espacio debajo de la línea */
+  margin-bottom: 10px; /* Espacio debajo de la línea */
 }
 
 .skills-content h3{
   color: var(--white);
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
-.skills-content ul {
-  margin-left: -2em;
-  list-style: none;
-  color: var(--white);
+.skill-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
 
-.skills-content li {
-  padding-bottom: 0.5em;
+/* Etiqueta de habilidades: imagen y nombre */
+.skill-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 150px; /* Tamaño fijo para alinear las barras */
+}
+
+.skill-label img {
+  width: 5px;
+  height: 5px;
+}
+
+.skill-label p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Barra de progreso */
+.skill-bar-container {
+  flex-grow: 1;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  width: 50%;
+  height: 10px;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.skill-bar {
+  height: 100%;
+  background-color: #5DADE2;
+  width: var(--percent);
+  border-radius: 20px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Mobile-first - ajustar el layout para dispositivos pequeños */
+@media (max-width: 767px) {
+  .skill-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skill-label {
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .skill-bar-container {
+    width: 60%;
+    height: 5px;
+  }
 }
 
 /* Adaptación para pantallas más grandes */
