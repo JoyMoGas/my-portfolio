@@ -443,32 +443,18 @@ button:hover span {
   margin-bottom: 20px; /* Espacio debajo de la línea */
 }
 
-.video-box {
-  background-color: var(--dark-gray); /* Color de fondo para simular el video */
-  border: 1px solid hsla(0deg, 0%, 40%, 0.25); /* Contorno del cuadro */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 20px; /* Espacio interno */
-  margin-top: 20px; /* Espacio superior */
-  width: 88%; /* Ancho del cuadro */
-  
-  height: 340px; /* Altura del cuadro para simular un video */
-  display: flex; /* Utiliza flexbox para centrar el contenido */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+.video-content video {
+  width: 100%; /* Ocupa todo el ancho disponible en móviles */
+  height: auto; /* Ajusta la altura automáticamente */
+  max-width: 420px; /* Máximo ancho para móviles */
 }
 
-.video-placeholder {
-  color: var(--white);
-  display: flex; /* Utiliza flexbox para centrar el icono y el texto */
-  flex-direction: column; /* Coloca el icono y texto uno encima del otro */
-  align-items: center; /* Centra horizontalmente el contenido */
-}
+@media (min-width: 768px) {
+  .video-content video {
+    max-width: 780px; /* Aumenta el tamaño del video en pantallas más grandes */
+  }
 
-.video-placeholder i {
-  size: 5em;
-  color: var(--white);
 }
-
 /* Adaptación para pantallas más grandes */
 @media (min-width: 768px) {
   html {
@@ -476,6 +462,7 @@ button:hover span {
     overflow-y: auto;
     scroll-behavior: smooth;
   }
+
   .about-content #line {
     width: 18%;
   }
