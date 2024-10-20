@@ -449,6 +449,7 @@ button:hover span {
   max-width: 420px; /* Máximo ancho para móviles */
 }
 
+/* bufei */
 @media (min-width: 768px) {
   .video-content video {
     max-width: 780px; /* Aumenta el tamaño del video en pantallas más grandes */
