@@ -1,8 +1,15 @@
 :root {
-  --primary-color: #F54864; /* #F78361 */
-  --secondary-color: #242A38;
-  --dark-gray: #4E596F;
+  --primary-color: #2a9d8f; /* #F78361 */
+  --secondary-color: #2e3b4e;
+  --dark-gray: #1a2a3a;
   --white: #FFFFFF;
+
+  /*
+  #2a9d8f
+  #1a2a3a
+  #2e3b4e
+
+  */
 }
 
 body, html {
@@ -145,7 +152,7 @@ body {
 .about-content #line {
   display: block;
   width: 30%; /* O el ancho que prefieras */
-  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  border-top: 2px solid var(--primary-color); /* Línea similar a <hr> */
   margin-bottom: 20px; /* Espacio debajo de la línea */
 }
 
@@ -254,7 +261,7 @@ button:hover span {
 .skills-content span {
   display: block;
   width: 30%; /* O el ancho que prefieras */
-  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  border-top: 2px solid var(--primary-color); /* Línea similar a <hr> */
   margin-bottom: 10px; /* Espacio debajo de la línea */
 }
 
@@ -385,7 +392,7 @@ button:hover span {
 .services-content span {
   display: block;
   width: 30%; /* O el ancho que prefieras */
-  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  border-top: 2px solid var(--primary-color); /* Línea similar a <hr> */
   margin-bottom: 20px; /* Espacio debajo de la línea */
 }
 
@@ -404,7 +411,7 @@ button:hover span {
 }
 
 .service-box {
-  border: 1px solid #F54864; /* Contorno de los recuadros */
+  border: 1px solid var(--primary-color); /* Contorno de los recuadros */
   padding: 1rem;
   border-radius: 10px;
   background-color: #4E596F; /* Cambia según el recuadro */
@@ -439,7 +446,7 @@ button:hover span {
 .video-content #line {
   display: block;
   width: 30%; /* O el ancho que prefieras */
-  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  border-top: 2px solid var(--primary-color); /* Línea similar a <hr> */
   margin-bottom: 20px; /* Espacio debajo de la línea */
 }
 
@@ -542,7 +549,7 @@ button:hover span {
 .social-media #line {
   display: block;
   width: 30%; /* O el ancho que prefieras */
-  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  border-top: 2px solid var(--primary-color); /* Línea similar a <hr> */
   margin-bottom: 20px; /* Espacio debajo de la línea */
 }
 
@@ -599,7 +606,7 @@ button:hover span {
 .portfolio-content span {
   display: block;
   width: 30%; /* O el ancho que prefieras */
-  border-top: 2px solid #F54864; /* Línea similar a <hr> */
+  border-top: 2px solid var(--primary-color); /* Línea similar a <hr> */
   margin-bottom: 20px; /* Espacio debajo de la línea */
 }
 
@@ -691,12 +698,7 @@ button:hover span {
   }
 }
 
-:root {
-  --primary-color: #F54864; 
-  --secondary-color: #242A38;
-  --dark-gray: #4E596F;
-  --white: #FFFFFF;
-}
+
 
 /* Animación de fade-in */
 .fade-in {
@@ -767,7 +769,7 @@ button:hover span {
 
 .nav_items a:hover {
   margin: 15px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   position: relative;
   text-decoration: none;
   transition: padding 0.3s ease, color 0.3s ease; /* Transición suave para el padding y color */
@@ -784,7 +786,7 @@ button:hover span {
   bottom: 0;
   width: 0;
   height: 2px;
-  background: var(--dark-gray);
+  background: var(--primary-color);
   transition: all 0.5s;
 }
 
@@ -798,7 +800,7 @@ button:hover span {
 
 .language-toggle {
   position: relative; /* Para posicionar la lista desplegable */
-  margin: 0 15px; /* Espaciado a los lados */
+  margin: 0 50px; /* Espaciado a los lados */
 }
 
 #language-toggle {
@@ -871,13 +873,15 @@ button:hover span {
   }
 }
 
+
 .footer {
-  background: var(--secondary-color);
+  background: var(--dark-gray);
   padding: 20px 0; /* Ajuste del padding para móviles */
   font-family: 'Play', sans-serif;
   text-align: center;
   position: relative; /* Cambiado para facilitar la fijación */
   bottom: 0; /* Fijar al fondo */
+  box-shadow: 6px 0 8px rgba(0, 0, 0, 0.2);
   width: 100%; /* Asegurar que ocupa el ancho completo */
 }
 
